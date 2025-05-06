@@ -114,14 +114,14 @@ document.addEventListener('DOMContentLoaded', function () {
     function showImages(images, brand, model, year) {
         // Clear the bottom section
         bottomSection.innerHTML = `<h2>Фото для ${brand} ${model} (${year}):</h2>`;
-
+    
         // Display all images for the selected year
         const imageContainer = document.createElement('div');
         imageContainer.style.display = 'flex';
         imageContainer.style.flexWrap = 'wrap';
         imageContainer.style.justifyContent = 'center';
         imageContainer.style.gap = '10px';
-
+    
         images.forEach(imageUrl => {
             const img = document.createElement('img');
             img.src = imageUrl;
@@ -129,16 +129,24 @@ document.addEventListener('DOMContentLoaded', function () {
             img.style.maxWidth = '300px'; // Limit image size
             img.style.maxHeight = '200px'; // Prevent overflow
             img.style.objectFit = 'cover';
-
-            // Hide the image if it fails to load
+    
+            // Hide the image if it fails to load, has intrinsic size 1x1, or rendered aspect ratio 1:1
+            img.onload = function () {
+                const aspectRatio = img.naturalWidth / img.naturalHeight;
+                if ((img.naturalWidth === 1 && img.naturalHeight === 1) || aspectRatio === 1) {
+                    img.style.display = 'none';
+                    console.warn(`Image with intrinsic size 1x1 or aspect ratio 1:1 was hidden: ${imageUrl}`);
+                }
+            };
+    
             img.onerror = function () {
                 img.style.display = 'none';
                 console.warn(`Image not found: ${imageUrl}`);
             };
-
+    
             imageContainer.appendChild(img);
         });
-
+    
         bottomSection.appendChild(imageContainer);
     }
 });

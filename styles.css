@@ -62,11 +62,28 @@ button:active {
 #outputField img {
     display: block;
     margin: 15px auto;
-    max-width: 90%;
-    height: auto;
+    width: 200px; /* Фіксована ширина для всіх зображень */
+    height: 200px; /* Фіксована висота для всіх зображень */
+    object-fit: cover; /* Обрізає зображення, щоб воно відповідало заданим розмірам */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     animation: zoomIn 1s ease-in-out;
+}
+
+/* Приховує зображення з intrinsic size 1x1 */
+#outputField img {
+    display: block;
+    margin: 15px auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: zoomIn 1s ease-in-out;
+}
+
+#outputField img:not([src]), #outputField img[src=""] {
+    display: none; /* Приховує зображення без джерела */
 }
 
 div {
