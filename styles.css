@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* М'який градієнтний фон */
+    background: linear-gradient(135deg, #3e4cc9, #919191); /* Темно-синій до рожевого градієнт */
 }
 
 .center-block {
@@ -14,7 +14,7 @@ body {
     padding: 40px;
     border: 1px solid #ddd;
     border-radius: 16px;
-    background: #ffffff;
+    background: #f5f5f5; /* Світло-сірий фон */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     max-width: 80%;
     overflow: hidden;
@@ -23,7 +23,7 @@ body {
 
 h2 {
     font-size: 1.8rem;
-    color: #333;
+    color: #4a4a4a; /* Темно-сірий текст */
     margin-bottom: 20px;
     animation: slideIn 1s ease-in-out;
 }
@@ -34,7 +34,7 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 8px;
-    background-color: #4caf50;
+    background-color: #7274db; /* Помаранчевий колір кнопки */
     color: #fff;
     font-size: 14px;
     font-weight: bold;
@@ -43,7 +43,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #db7353; /* Темніший помаранчевий при наведенні */
     transform: scale(1.05);
 }
 
