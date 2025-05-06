@@ -124,3 +124,21 @@ div {
         opacity: 1;
     }
 }
+
+.invisible-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.2); /* Ледве помітний текст */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Ледве помітна рамка */
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+}
+
+.invisible-button:hover {
+    color: rgba(0, 0, 0, 0.6); /* Трохи помітніший текст при наведенні */
+    border-color: rgba(0, 0, 0, 0.6); /* Трохи помітніша рамка при наведенні */
+    background-color: rgba(0, 0, 0, 0.05); /* Легкий фон при наведенні */
+}
